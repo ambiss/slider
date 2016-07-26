@@ -1,0 +1,36 @@
+@mixin slider($back: #666, $track: #f9f9f9, $s: 5px) {
+    white-space: nowrap;
+    overflow: auto;
+    overflow-y: hidden;
+    display: block;
+    
+    &::-webkit-scrollbar { 
+        height: $s;
+        
+        background: $back;
+    }
+    &::-webkit-scrollbar-track {
+        background-color: $track;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: $back;
+        width: 20px;
+        position: relative;
+        z-index: 999999;
+        border-radius: 50px;
+    }
+    
+    /* For IE */
+    & {
+        scrollbar-base-color: $back;
+    }
+    & {
+        scrollbar-3dlight-color: $back;
+    }
+    & { 
+        scrollbar-highlight-color: $back;
+    }
+    & {
+        scrollbar-track-color: $track;
+    }
+}
